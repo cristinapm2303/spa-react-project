@@ -1,12 +1,12 @@
-const PanelUsuario3 = () => {
+const PanelUsuario4 = () => {
     const usuario = JSON.parse(localStorage.getItem('usuario'));
   
     return (
       <div>
         <h2>Bienvenido, {usuario?.nombre}</h2>
-        <p>Este es el panel privado 3.</p>
+        <p>Este es el panel reservas.</p>
       </div>
     );
   };
   
-  export default PanelUsuario3;
+  export default PanelUsuario4;

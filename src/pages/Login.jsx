@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../styles/Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -26,12 +27,38 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <h2>Login</h2>
-      <input type="email" placeholder="Correo" value={email} onChange={e => setEmail(e.target.value)} />
-      <input type="password" placeholder="Contraseña" value={password} onChange={e => setPassword(e.target.value)} />
-      <button type="submit">Iniciar Sesión</button>
-    </form>
+    <div className="login-page">
+      <div className="login-card">
+        <div className="logo">🏐 VolleyTime</div>
+        <form onSubmit={handleLogin}>
+          <div className="mb-3">
+            <label className="form-label">Correo electrónico</label>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="correo@ejemplo.com"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Contraseña</label>
+            <input
+              type="password"
+              className="form-control"
+              placeholder=""
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit" className="btn login-btn w-100 text-white">
+            Iniciar Sesión
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 

@@ -1,0 +1,35 @@
+.login-page {
+    background: url('https://images.unsplash.com/photo-1593113594446-254a5cbd30f3') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .login-btn {
+    background-color: #f4a261;
+    border: none;
+  }
+  
+  .login-btn:hover {
+    background-color: #e76f51;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    color: #e76f51;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
