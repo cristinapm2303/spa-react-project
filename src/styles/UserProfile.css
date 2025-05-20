@@ -1,0 +1,61 @@
+.perfil-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.perfil-container h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.perfil-container p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.perfil-container p strong {
+    color: #222;
+}
+
+.botones {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.boton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.boton.modificar {
+    background-color: #007bff;
+    color: white;
+}
+
+.boton.modificar:hover {
+    background-color: #0056b3;
+}
+
+.boton.borrar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.boton.borrar:hover {
+    background-color: #a71d2a;
+}

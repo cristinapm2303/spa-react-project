@@ -1,13 +1,47 @@
-const PanelUsuario = () => {
-    const usuario = JSON.parse(localStorage.getItem('usuario'));
-  
-    return (
-      <div>
-        <h2>Bienvenido, {usuario?.nombre}</h2>
-        <p>Este es el panel privado.</p>
-      </div>
-    );
-  };
-  
-  export default PanelUsuario;
+import { useEffect, useState } from 'react';
+import '../styles/UserProfile.css';
+
+const Users = () => {
+  const [jugadores, setJugadores] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('https://mock.apidog.com/m1/878633-860097-default/users')
+      .then((res) => {
+        if (!res.ok) throw new Error('Error al obtener los jugadores');
+        return res.json();
+      })
+      .then((data) => {
+        setJugadores(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p className="perfil-container">Cargando jugadores...</p>;
+  if (error) return <p className="perfil-container">Error: {error}</p>;
+
+  return (
+    <div className="perfil-container">
+      <h2>LISTADO DE JUGADORES</h2>
+      {jugadores.length === 0 ? (
+        <p>No hay jugadores disponibles.</p>
+      ) : (
+        <ul>
+          {jugadores.map((jugador) => (
+            <li key={jugador.id} style={{ marginBottom: '15px' }}>
+              <strong>{jugador.nombre_usuario}</strong>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+export default Users;
   

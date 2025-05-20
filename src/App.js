@@ -5,8 +5,8 @@ import { AuthProvider } from './context/AuthContext';
 import { useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
-import Vista1 from './pages/Users';
-import Vista2 from './pages/UserProfile';
+import Jugadores from './pages/Users';
+import PerfilUsuario from './pages/UserProfile';
 import Vista3 from './pages/Events';
 import Vista4 from './pages/Reservations';
 import Vista5 from './pages/Dashboard';
@@ -38,18 +38,18 @@ function AppInterno() {
 
 
         <Route
-          path="/vista1"
+          path="/users"
           element={
             <PrivateRoute>
-              <Vista1 />
+              <Jugadores />
             </PrivateRoute>
           }
         />
         <Route
-          path="/vista2"
+          path="/user/profile"
           element={
             <PrivateRoute>
-              <Vista2 />
+              <PerfilUsuario />
             </PrivateRoute>
           }
         />
