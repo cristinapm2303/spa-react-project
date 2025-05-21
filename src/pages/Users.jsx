@@ -33,8 +33,9 @@ const Users = () => {
       ) : (
         <ul>
           {jugadores.map((jugador) => (
-            <li key={jugador.id} style={{ marginBottom: '15px' }}>
-              <strong>{jugador.nombre_usuario}</strong>
+            <li key={jugador.id} className="jugador-card">
+              <div className="jugador-nombre-usuario">{jugador.nombre_usuario}</div>
+              <div className="jugador-nombre-completo">{jugador.nombre} {jugador.apellidos}</div>
             </li>
           ))}
         </ul>

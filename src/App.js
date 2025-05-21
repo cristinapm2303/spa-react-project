@@ -9,7 +9,8 @@ import Jugadores from './pages/Users';
 import PerfilUsuario from './pages/UserProfile';
 import Vista3 from './pages/Events';
 import Vista4 from './pages/Reservations';
-import Vista5 from './pages/Dashboard';
+import Dashboard from './pages/Dashboard';
+import Logout from './pages/Logout';
 
 // import Protected from './components/Protected'
 
@@ -27,13 +28,13 @@ function AppInterno() {
   const location = useLocation();
 
   // Si estamos en login (/), no mostrar Navbar
-  const showNavbar = location.pathname !== '/' && location.pathname !== '/login';
+  const showNavbar = location.pathname !== '/login';
 
   return (
     <>
       {showNavbar && <Navbar />}
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
 
 
@@ -70,10 +71,10 @@ function AppInterno() {
           }
         />
         <Route
-          path="/vista5"
+          path="/logout"
           element={
             <PrivateRoute>
-              <Vista5 />
+              <Logout />
             </PrivateRoute>
           }
         />

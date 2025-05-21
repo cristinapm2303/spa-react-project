@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1f2937; /* gris oscuro */
-    padding: 15px 30px;
+    background-color: #1f2937;
+    padding: 15px 100px;
     color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -21,6 +21,11 @@
     width: 40px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.navbar-logo .logo {
+  text-decoration: none;
+  font-weight: bold;
 }
   
 .navbar-links {

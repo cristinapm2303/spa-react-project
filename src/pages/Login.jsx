@@ -17,7 +17,7 @@ const Login = () => {
       if (usuario) {
         console.log('Log in correcto');
         localStorage.setItem('usuario', JSON.stringify(usuario));
-        navigate('/vista1');
+        navigate('/');
       } else {
         alert('Credenciales inválidas');
       }
