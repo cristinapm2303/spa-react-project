@@ -34,8 +34,8 @@ const Users = () => {
         <ul>
           {jugadores.map((jugador) => (
             <li key={jugador.id} className="jugador-card">
-              <div className="jugador-nombre-usuario">{jugador.nombre_usuario}</div>
-              <div className="jugador-nombre-completo">{jugador.nombre} {jugador.apellidos}</div>
+              <div className="jugador-nombre-usuario"><strong>Usuario:</strong> {jugador.nombre_usuario}</div>
+              <div className="jugador-nombre-completo"><strong>Nombre:</strong> {jugador.nombre} {jugador.apellidos}</div>
             </li>
           ))}
         </ul>

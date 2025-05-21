@@ -24,6 +24,25 @@
   .login-btn:hover {
     background-color: #e76f51;
   }
+
+  .login-btn {
+    background-color: #f4a261; 
+    color: white; 
+    border: none;
+    padding: 12px 24px; 
+    font-size: 16px;
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    display: block;
+    margin: 0 auto;
+    text-align: center; 
+    text-decoration: none; 
+  }
+
+  .login-btn:hover {
+    background-color: #e76f51;
+  }
   
   .logo {
     font-size: 2rem;

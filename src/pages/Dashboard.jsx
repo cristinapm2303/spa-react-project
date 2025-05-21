@@ -45,7 +45,7 @@ const Dashboard = () => {
         </p>
 
         {isLoggedIn ? (
-          <a href="/users" className="btn btn-success btn-lg">
+          <a href="/users" className="btn btn-outline-primary btn-lg">
             Encontrar jugadores
           </a>
         ) : (

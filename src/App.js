@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard';
 import Logout from './pages/Logout';
 import Eventos from './pages/Events';
 import Reservas from './pages/Reservations';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -77,6 +78,7 @@ function AppInterno() {
           }
         />
       </Routes>
+      {showNavbar && <Footer />}
     </>
   );
 }
