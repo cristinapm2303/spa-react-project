@@ -7,12 +7,10 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Jugadores from './pages/Users';
 import PerfilUsuario from './pages/UserProfile';
-import Vista3 from './pages/Events';
-import Vista4 from './pages/Reservations';
 import Dashboard from './pages/Dashboard';
 import Logout from './pages/Logout';
-
-// import Protected from './components/Protected'
+import Eventos from './pages/Events';
+import Reservas from './pages/Reservations';
 
 function App() {
   return (
@@ -55,18 +53,18 @@ function AppInterno() {
           }
         />
         <Route
-          path="/vista3"
+          path="/eventos"
           element={
             <PrivateRoute>
-              <Vista3 />
+              <Eventos/>
             </PrivateRoute>
           }
         />
         <Route
-          path="/vista4"
+          path="/reservas"
           element={
             <PrivateRoute>
-              <Vista4 />
+              <Reservas />
             </PrivateRoute>
           }
         />

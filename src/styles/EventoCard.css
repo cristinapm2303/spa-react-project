@@ -1,0 +1,8 @@
+.evento-card {
+    border-left: 6px solid orange;
+    background-color: #fffaf3;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #ccc;
+    border-radius: 10px;
+  }
+  
