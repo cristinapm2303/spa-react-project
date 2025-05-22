@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import EventoCard from '../components/EventoCard';
+import useAuth from '../hooks/useAuth';
+
 
 const Eventos = () => {
+  const { usuario } = useAuth();
+
   const [eventos, setEventos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,7 +36,7 @@ const Eventos = () => {
         <p>No hay eventos disponibles.</p>
       ) : (
       eventos.map((evento) => (
-        <EventoCard key={evento.id} evento={evento} />
+        <EventoCard key={evento.id} evento={evento} userId={usuario?.id} />
       ))
       )}
     </div>

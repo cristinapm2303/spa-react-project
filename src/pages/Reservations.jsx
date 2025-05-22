@@ -1,26 +1,13 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import '../styles/Reservas.css'
+import useReservas from '../hooks/useReservas';
 
 const Reservas = () => {
-  const [reservas, setEventos] = useState([]);
+
   const usuario = JSON.parse(localStorage.getItem('usuario'));
+  const { reservas, loading, error } = useReservas(usuario?.id);
 
-  useEffect(() => {
-    const fetchEventos = async () => {
-      try {
-        const res = await axios.get('https://mock.apidog.com/m1/878633-860097-default/events');
-        const misEventos = res.data.filter(evento =>
-          evento.apuntados.includes(usuario.id) || evento.suplentes.includes(usuario.id)
-        );
-        setEventos(misEventos);
-      } catch (err) {
-        console.error('Error al obtener eventos:', err);
-      }
-    };
-
-    fetchEventos();
-  }, [usuario.id]);
+  if (loading) return <p className="perfil-container">Cargando reservas...</p>;
+  if (error) return <p className="perfil-container">Error: {error}</p>;
 
   return (
     <div className="perfil-container">

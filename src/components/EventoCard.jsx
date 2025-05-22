@@ -2,13 +2,13 @@ import '../styles/EventoCard.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const EventoCard = ({ evento }) => {
+
+const EventoCard = ({ evento, userId }) => {
     const [estadoEvento, setEstadoEvento] = useState(evento);
 
-    const usuario = JSON.parse(localStorage.getItem('usuario'));
     const { apuntados, suplentes, plazasMaximas } = estadoEvento;
-    const yaApuntado = estadoEvento.apuntados.includes(usuario.id);
-    const esSuplente = suplentes.includes(usuario.id);
+    const yaApuntado = estadoEvento.apuntados.includes(userId);
+    const esSuplente = suplentes.includes(userId);
   
     const handleApuntarse = async () => {
         try {
@@ -16,9 +16,9 @@ const EventoCard = ({ evento }) => {
             let nuevosSuplentes = [...suplentes];
       
             if (apuntados.length < plazasMaximas) {
-              nuevosApuntados.push(usuario.id);
+              nuevosApuntados.push(userId);
             } else {
-              nuevosSuplentes.push(usuario.id);
+              nuevosSuplentes.push(userId);
             }
 
           const respuesta = await axios.put(
@@ -40,8 +40,8 @@ const EventoCard = ({ evento }) => {
 
       const handleCancelar = async () => {
     try {
-      const nuevosApuntados = apuntados.filter(id => id !== usuario.id);
-      const nuevosSuplentes = suplentes.filter(id => id !== usuario.id);
+      const nuevosApuntados = apuntados.filter(id => id !== userId);
+      const nuevosSuplentes = suplentes.filter(id => id !== userId);
 
       const res = await axios.put(
         `https://mock.apidog.com/m1/878633-860097-default/events/${evento.id}`,
